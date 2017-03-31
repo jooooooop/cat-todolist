@@ -1,0 +1,40 @@
+<% layout( 'layout' ) -%>
+
+<form>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon ft24"><%= timenow %></span>
+        <input type="text" class="form-control" name="content" placeholder="添加任务..." id="add_matter" disabled>
+        </button>
+    </div>
+</form>
+<br/>
+<div class="matters-list">
+<% todos.forEach( function ( todo ){ %>
+<% if( todo._id == current ){ %>
+<div class="item-new">
+    <% }else{ %>
+    <div class="item">
+        <% } %>
+        <% if( todo._id == current ){ %>
+        <div class="matter-focus" role="alert">
+            <form action="/update/<%= todo._id %>" method="post" accept-charset="utf-8">
+                <div class="input-group">
+                    <span class="input-group-addon"><%= todo.updated_at %></span>
+                    <input class="form-control" type="text" name="content" value="<%= todo.content %>"  />
+          <span class="input-group-btn">
+        <a class="btn btn-default " href="/destroy/<%= todo._id %>" type="button">Del</a>
+      </span>
+            </form>
+        </div>
+        <% }else{ %>
+        <div class="input-group">
+            <span class="input-group-addon"><%= todo.updated_at %></span>
+            <input class="form-control" type="text" name="content" value="<%= todo.content %>" disabled/>
+          <span class="input-group-btn">
+        <a class="btn btn-default " href="/destroy/<%= todo._id %>" type="button" disabled>Del</a>
+      </span>
+            <% } %>
+        </div>
+        <br/>
+<% }); %>
+</div>

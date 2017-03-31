@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>猫咪清单</title>
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <style>
+          body { padding-top: 70px; }
+
+          .brand{
+              height: 50px;
+              padding: 15px 15px;
+              font-size: 18px;
+              line-height: 20px;
+              display: block;
+              color: deeppink;
+
+          }
+          .ft24{
+              font-size: 12px;
+          }
+          .matters-list{
+              background-color: pink;
+              border-radius: 10px;
+          }
+          .input-group{
+              margin-left: 10px;
+              padding-top: 5px;
+              margin-right: 10px;
+          }
+          .matter-focus{
+              border: 5px solid deeppink;
+          }
+      </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header text-center">
+
+              <p class="brand " href="/">猫咪任务清单</p>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class= "container theme-showcase" role="main">
+        <div class="page-header">
+             <h4>请直接输入要完成的事情吧~</h4>
+        </div>
+          <%- body %>
+    </div>
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="baseline/src/define.js?pro=./"></script>
+    <script src="pro/event.js"></script>
+  </body>
+</html>

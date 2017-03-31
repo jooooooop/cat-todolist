@@ -1,0 +1,25 @@
+<% layout( 'layout' ) -%>
+
+<form>
+    <div class="input-group input-group-lg">
+        <span class="input-group-addon ft24"><%= timenow %></span>
+        <input type="text" class="form-control" name="content" placeholder="添加任务..." id="add_matter">
+        </button>
+    </div>
+</form>
+<br/>
+<div class="matters-list">
+    <% todos.forEach( function ( todo ){ %>
+    <div class="input-group input-group">
+        <span class="input-group-addon ft24"><%= todo.updated_at %></span>
+        <input type="text" class="form-control" name="content"  value="<%= todo.content %>">
+    <span class="input-group-btn">
+            <a class="btn btn-default " href="/edit/<%= todo._id %>"  type="button">Edit</a>
+            <a class="btn btn-default " href="/destroy/<%= todo._id %>" type="button">Del</a>
+          </span>
+        </button>
+    </div>
+
+    <br/>
+    <% }); %>
+</div>
