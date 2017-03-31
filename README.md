@@ -13,3 +13,4 @@
 ## 2.screenshot
 
 ![image](screenshot.png)
+![image](screenshot_edit.png)
